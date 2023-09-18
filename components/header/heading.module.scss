@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.heading {
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 5rem;
+  color: #000;
+  @include respond(phone) {
+    font-size: 4rem !important;
+    line-height: 4rem !important;
+  }
+}
+.wrapper {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.headingWrapper {
+  display: inline-block;
+  overflow: hidden;
+}
+.em {
+  text-decoration: none;
+  color: $primary-color;
+  font-style: inherit;
+}

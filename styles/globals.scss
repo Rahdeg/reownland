@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@import "./variables.scss";
+@import "./range-input.scss";
+@import "nprogress/nprogress.css";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: local("Metropolis"),
+    url("../public/fonts/Metropolis/Metropolis-Light.otf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: local("Metropolis"),
+    url("../public/fonts/Metropolis/Metropolis-Medium.otf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: local("Metropolis"),
+    url("../public/fonts/Metropolis/Metropolis-Bold.otf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: local("Metropolis"),
+    url("../public/fonts/Metropolis/Metropolis-ExtraBold.otf")
+      format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: local("Metropolis"),
+    url("../public/fonts/Metropolis/Metropolis-ExtraBold.otf")
+      format("truetype");
+  font-weight: 800;
+}
+
+html {
+  font-size: 62.5%; /*1rem = 10px*/
+}
+
+body {
+  margin: 0;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $body-text-color;
+  font-size: 1.4rem;
+  overflow-x: hidden;
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+.layout-container {
+  width: calc(100% - 3.2rem);
+  max-width: 120.8rem;
+  margin: 0 1.6rem;
+}
+
+.yellow-color {
+  color: $yellow-color;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.green-color {
+  color: $green-color;
+}
+
+.white-color {
+  color: #fff !important;
+}
+
+.section-wrapper {
+  width: 90%;
+  margin: 4rem auto;
+}
+
+.cur-pnt {
+  cursor: pointer;
+}
+.cur-block {
+  cursor: no-drop;
+}
+
+.noLineHeight {
+  line-height: 0;
+}
+
+.link {
+  color: $primary-color !important;
+  text-decoration: none !important;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $primary-color !important;
+  }
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+#nprogress .bar {
+  background: $primary-color !important;
+  height: 3px !important;
+}
